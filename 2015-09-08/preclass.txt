@@ -23,6 +23,7 @@ the memory-based AI of this code? (Hint: What is the memory-based AI of just the
 innermost loop?)
 
 
+
 2. Now suppose that the cache is substantially larger than 16N, but
 substantially smaller than 8N^2. What is the AI now?
 
