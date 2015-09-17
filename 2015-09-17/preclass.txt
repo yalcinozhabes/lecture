@@ -5,6 +5,7 @@ than on the numerical analysis, but I am working under the assumption
 that you can figure out the numerical jargon.
 
 0.  How much time did you spend on this pre-class exercise, and when?
+	15 mins before the class.
 
 1.  What are one or two points that you found least clear in the
     9/17 slide decks (including the narration)?
@@ -25,6 +26,12 @@ that you can figure out the numerical jargon.
       void sparse_multiply(csr_t* A, double* x, double* result)
       {
           /* Fill in here */
+          int i, j;
+          for (i=0; i<n; i++){
+              for (j = A -> ptr[i]; j <= A -> ptr[i+1]; j++){
+                  result[i] += (A -> pr[j]) * x[ A->col[j] ];
+              }
+          }
       } 
 
 3.  From the slides, complete the following short code:
@@ -33,6 +40,8 @@ that you can figure out the numerical jargon.
                          double h, double x, double y)
       {
           /* Estimate the Laplacian applied to u at (x,y) */
+	return ( u(x+h,y) + u(x,y+h) + u(x-h,y) +u(x,y-h) - 4 * u(x,y) )\
+		/ (h*h);
       }
 
     If you are unfamiliar with the syntax, the first argument to
