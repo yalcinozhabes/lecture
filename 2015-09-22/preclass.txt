@@ -13,10 +13,34 @@
        time per trial (t_trial), and time to update the global
        counters in the critical section (t_update).
 
+        totalRunTime = (N/p)*t_trial + (N/batchSize) * t_update
+
     b) Run the code with a few different parameter values in order
        to estimate N, t_trial, and t_update for this code on
        a totient compute node.
 
+       I wasn't able to run the code on the compute node, but it worked
+       on the head node. 
+
+      --- Run input parameters:
+	rtol:      1.000000e-04
+	maxtrials: 10000000
+	nbatch:    1000
+	0.500052 (9.12583e-05) from 10008000 trials
+	8 threads (pthreads): 1.177470e-01 s 
+	--- Run input parameters:
+	rtol:      1.000000e-04
+	maxtrials: 10000000
+	nbatch:    1000
+	0.499926 (9.12577e-05) from 10004000 trials
+	4 threads (pthreads): 8.183800e-02 s
+	--- Run input parameters:
+	rtol:      1.000000e-04
+	maxtrials: 10000000
+	nbatch:    1000
+	0.50004 (9.12584e-05) from 10002000 trials
+	2 threads (pthreads): 1.169660e-01 s
+       
     c) Based on your model, suggest a strategy for choosing the batch
        size.  How might you generalize this strategy to automatically
        choose batch sizes for different types of computational
