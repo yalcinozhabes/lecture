@@ -1,7 +1,11 @@
 0.  How much time did you spend on this pre-class exercise, and when?
+Wednesday night (the night before), 15 mins.
 
 1.  What are one or two points that you found least clear in the
     9/24 slide decks (including the narration)?
+     The least clear part was memory model. I am confused about 
+     the sequential consistency and particularly how the compilers
+     we use handle it.
 
 2.  The omp_mc.c file in the demo subdirectory runs a Monte Carlo
     simulation to estimate the expected value of a uniform random
@@ -12,6 +16,8 @@
        terms of the number of trials (N), number of processors (p),
        time per trial (t_trial), and time to update the global
        counters in the critical section (t_update).
+
+         totalRunTime = (N/p)*t_trial + (N/batchSize) * t_update
 
     b) Run the code with a few different parameter values in order
        to estimate N, t_trial, and t_update for this code on
